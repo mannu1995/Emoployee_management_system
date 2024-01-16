@@ -38,7 +38,7 @@ def remove_emp(request,emp_id = 0):
         try:
             emp_to_remove = Employee.objects.get(employee_id=emp_id)
             emp_to_remove.delete()
-            return HttpResponse('Employee')
+            return HttpResponse(f'Employee {emp_to_remove.first_name} has been deleted successfully.')
         except:
             return HttpResponse('llll')
 
